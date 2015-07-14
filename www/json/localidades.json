@@ -1,0 +1,76 @@
+[
+    {
+        "localidades":
+        {
+        "01":
+            {
+                "nombreLocalidad":"Usaquén",
+                "rutaMapaLocalidad":"imagenes/mapa_localidad-01.png",
+                "hechosLocalidad":
+                [
+                    {
+                        "idHecho":"01",
+                        "nombreHecho":"Rodrigo Lara Bonilla",
+                        "linkHecho":"hecho.html",
+                        "rutaIcono":"imagenes/iconos/iconos_ubicacion02.svg",
+                        "posTop":"40%",
+                        "posLeft":"20%",
+                        "posRight":"",
+                        "posBottom":""
+                    },
+                    {
+                        "idHecho":"02",
+                        "nombreHecho":"Hecho2",
+                        "linkHecho":"hecho.html",
+                        "rutaIcono":"imagenes/iconos/iconos_ubicacion02.svg",
+                        "posTop":"50%",
+                        "posLeft":"30%",
+                        "posRight":"",
+                        "posBottom":""
+                    },
+                    {
+                        "idHecho":"03",
+                        "nombreHecho":"Hecho 3 prueba",
+                        "linkHecho":"hecho.html",
+                        "rutaIcono":"imagenes/iconos/iconos_ubicacion03.svg",
+                        "posTop":"55%",
+                        "posLeft":"35%",
+                        "posRight":"",
+                        "posBottom":""
+                    }
+                ]
+
+            },
+        "02":
+            {
+                "nombreLocalidad":"Chapinero",
+                "mapaLocalidad":"imagenes/hecho_memoria01.svg",
+                "iconosMapa":
+                [
+                    {
+                        "rutaIcono":"",
+                        "posTop":"",
+                        "posLeft":"",
+                        "posRight":"",
+                        "posBottom":""
+                    },
+                    {
+                        "rutaIcono":"",
+                        "posTop":"",
+                        "posLeft":"",
+                        "posRight":"",
+                        "posBottom":""
+                    }
+                ],
+                "hechosLocalidad":
+                [
+                    {
+                        "nombreHecho":"",
+                        "linkHecho":""
+                    }
+                ]
+
+            }
+        }
+    }
+]

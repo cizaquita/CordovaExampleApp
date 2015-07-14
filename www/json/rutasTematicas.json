@@ -1,0 +1,38 @@
+
+	[
+		{
+			"idRuta":"01",
+			"nombreRuta":"Ruta1",
+			"descripcionRuta":"Curabitur vel arcu felis. Pellentesque iaculis dapibus orci vitae condimentum. Aliquam nec ipsum sed felis accumsan sagittis vel eu augue. Pellentesque in pretium leo, a vulputate urna. Praesent dapibus luctus dui ultricies malesuada. Duis bibendum risus ac lacus semper, sit amet semper lectus blandit. Vestibulum sit amet nisi at sapien pretium volutpat et eget lacus. Fusce finibus iaculis augue, at aliquet elit porttitor eu. Maecenas elit felis, ullamcorper suscipit sem nec, lacinia congue lorem.",
+			"linkMapa":"ruta.html",
+			"extra":""
+		},
+		{
+			"idRuta":"02",
+			"nombreRuta":"Ruta2",
+			"descripcionRuta":"Curabitur vel arcu felis. Pellentesque iaculis dapibus orci vitae condimentum. Aliquam nec ipsum sed felis accumsan sagittis vel eu augue. Pellentesque in pretium leo, a vulputate urna. Praesent dapibus luctus dui ultricies malesuada. Duis bibendum risus ac lacus semper, sit amet semper lectus blandit. Vestibulum sit amet nisi at sapien pretium volutpat et eget lacus. Fusce finibus iaculis augue, at aliquet elit porttitor eu. Maecenas elit felis, ullamcorper suscipit sem nec, lacinia congue lorem.",
+			"linkMapa":"ruta.html",
+			"extra":""
+		},
+		{
+			"idRuta":"03",
+			"nombreRuta":"Ruta3",
+			"descripcionRuta":"Curabitur vel arcu felis. Pellentesque iaculis dapibus orci vitae condimentum. Aliquam nec ipsum sed felis accumsan sagittis vel eu augue. Pellentesque in pretium leo, a vulputate urna. Praesent dapibus luctus dui ultricies malesuada. Duis bibendum risus ac lacus semper, sit amet semper lectus blandit. Vestibulum sit amet nisi at sapien pretium volutpat et eget lacus. Fusce finibus iaculis augue, at aliquet elit porttitor eu. Maecenas elit felis, ullamcorper suscipit sem nec, lacinia congue lorem.",
+			"linkMapa":"ruta.html",
+			"extra":""
+		},
+		{
+			"idRuta":"04",
+			"nombreRuta":"Ruta4",
+			"descripcionRuta":"Curabitur vel arcu felis. Pellentesque iaculis dapibus orci vitae condimentum. Aliquam nec ipsum sed felis accumsan sagittis vel eu augue. Pellentesque in pretium leo, a vulputate urna. Praesent dapibus luctus dui ultricies malesuada. Duis bibendum risus ac lacus semper, sit amet semper lectus blandit. Vestibulum sit amet nisi at sapien pretium volutpat et eget lacus. Fusce finibus iaculis augue, at aliquet elit porttitor eu. Maecenas elit felis, ullamcorper suscipit sem nec, lacinia congue lorem.",
+			"linkMapa":"ruta.html",
+			"extra":""
+		},
+		{
+			"idRuta":"05",
+			"nombreRuta":"Ruta 05 prueba",
+			"descripcionRuta":"DESCRIPCIÓN DE LA RUTA",
+			"linkMapa":"ruta.html",
+			"extra":""
+		}
+	]

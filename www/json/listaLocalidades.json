@@ -1,0 +1,117 @@
+
+	[
+		{
+			"idLocalidad":"01",
+			"nombreLocalidad":"Usaquén",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"02",
+			"nombreLocalidad":"Chapinero",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"03",
+			"nombreLocalidad":"Santa Fe",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"04",
+			"nombreLocalidad":"San Cristobal",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"05",
+			"nombreLocalidad":"Usme",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"06",
+			"nombreLocalidad":"Tunjuelito",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"07",
+			"nombreLocalidad":"Bosa",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"08",
+			"nombreLocalidad":"Ciudad Kennedy",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"09",
+			"nombreLocalidad":"Fontibon",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"10",
+			"nombreLocalidad":"Engativa",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"11",
+			"nombreLocalidad":"Suba",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"12",
+			"nombreLocalidad":"Barrios Unidos",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"13",
+			"nombreLocalidad":"Teusaquillo",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"14",
+			"nombreLocalidad":"Los Martires",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"15",
+			"nombreLocalidad":"Antonio Nariño",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"16",
+			"nombreLocalidad":"Puente Aranda",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"17",
+			"nombreLocalidad":"Candelaria",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"18",
+			"nombreLocalidad":"Rafael Uribe",
+			"link":"localidad.html",
+			"extra":""
+		},
+		{
+			"idLocalidad":"19",
+			"nombreLocalidad":"Ciudad Bolívar",
+			"link":"localidad.html",
+			"extra":""
+		}
+	]

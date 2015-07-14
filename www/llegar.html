@@ -1,11 +1,9 @@
 <!doctype html>
+<html lang="es" ng-app="app">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
 <title>Bogotá Ciudad Memoria, Centro de Memoria, Paz y Reconciliación</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="imagenes/favicon.ico" />
-<link rel="shortcut icon" href="img/favicon.ico"/>
 <link href="css/estilos.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="css/normalize.css" />
 <link rel="stylesheet" href="fuentes/opensans_bold_macroman/stylesheet.css" />
@@ -15,6 +13,7 @@
 <script src="js/comandos.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/prefixfree.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><!--código para el botón share de twitter-->
 <!-- SCRIPTS MAPA -->
 
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -24,6 +23,13 @@
     var map; 
     var miLatitud;
     var miLongitud;
+    console.log(street_name);
+
+    //var latitudHecho = $scope.datos[0].hechosLocalidad01.03.latitudHecho;
+    //var longitudHecho = {{datos[0].hechosLocalidad01.03.longitudHecho}};
+
+    //alert("Latitud Hecho: " + latitudHecho);
+    //alert("Longitud Hecho: " + longitudHecho);
 
     $(document).ready(function(){
       $('#instructions').empty();
@@ -43,10 +49,38 @@
           map.addMarker({
             lat: miLatitud,
             lng: miLongitud,
-            icon: 'imagenes/miUbicacion32.png',
+            icon: 'imagenes/iconos/iconos_ubicacion01.svg',
             title: 'Mi ubicación',
             infoWindow: {
-              content: '<b>Tu ubicación</b><br>Estás acá'
+              content: '<b>Tu ubicación 01</b><br>Estás acá'
+            }
+            /*click: function(e) {
+              alert('You clicked in this marker');
+            }*/
+          });
+
+          // 4.619203, -74.076119
+          map.addMarker({
+            lat: miLatitud+0.00005,
+            lng: miLongitud+0.00005,
+            icon: 'imagenes/iconos/iconos_ubicacion02.svg',
+            title: 'Mi ubicación 02',
+            infoWindow: {
+              content: '<b>Tu ubicación 02</b><br>Estás acá'
+            }
+            /*click: function(e) {
+              alert('You clicked in this marker');
+            }*/
+          });
+
+          // 4.619203, -74.076119
+          map.addMarker({
+            lat: miLatitud+0.0001,
+            lng: miLongitud+0.0001,
+            icon: 'imagenes/iconos/iconos_ubicacion03.svg',
+            title: 'Mi ubicación 03',
+            infoWindow: {
+              content: '<b>Tu ubicación 03</b><br>Estás acá'
             }
             /*click: function(e) {
               alert('You clicked in this marker');
@@ -252,7 +286,7 @@
                 	<li id="sobre"><a href="index.html" target="_self">Sobre Bogotá Ciudad <wbr>Memoria</a></li>
                     <li id="centro"><a href="centro.html" target="_self">Centro de Memoria, Paz y <wbr>Reconciliación</a></li>
                     <li id="mapa"><a href="mapa.html" target="_self">Mapa Histórico</a></li>
-                    <li id="sobre"><a href="rutas.html" target="_self">Rutas Temáticas</a></li>
+                    <li id="rutas"><a href="rutas.html" target="_self">Rutas Temáticas</a></li>
                     <li id="sitio"><a href="buscar.html" target="_self">Buscar Sitio de Memoria</a></li>
                     <li id="cerca"><a href="cerca.html" target="_self">Estoy Cerca de...</a></li>
                 </ul>
@@ -260,49 +294,84 @@
         	<img id="memoria" src="imagenes/titulo_app_mobil.svg" alt="Bogotá ciudad memoria" />
         	<img id="logo" src="imagenes/logo.svg" alt="Centro de Memoria, paz y reconciliación" />
         </header>
-        <section>
+        <section ng-controller="appController">
         	<div id="titulo_seccion">
             	<img class="seccion_icono" src="imagenes/icono_seccion.svg" alt="Sobre Bogotá Ciudad Memoria" />
                 <h1>Mapa Histórico</h1>            	
             </div>
-            <article>
-            	<h3>Usaquén</h3>
-                <a class="flecha_atras" href="#" target="_self"></a>                    
-                <div class="contenedor_hechos">
-            		<div class="datos_hecho">                		
-                    	<div class="datos">
-                        	<img class="imagen_hecho" src="imagenes/hecho_memoria01.svg" alt="Rodrigo Lara Bonilla" />                        
-                    		<h4>Rodrigo Lara Bonilla</h4>
-                    		<p class="p_evento">Carrera 58 No. 127 - 59</p>
+            <article ng-repeat="data in datos">
+                <!-- FORM NECESARIO PARA PASAR AL OTRO HECHO -->
+                <form action="hecho.html" method="POST">
+                  <h3>{{data.hechosLocalidad01.03.nombreLocalidad}}</h3>           
+                  <div class="contenedor_hechos">
+              		  <div class="datos_hecho">                		
+                      	<div class="datos">
+                          <img class="imagen_hecho" src="{{data.hechosLocalidad01.03.rutaImagen}}" alt="{{data.hechosLocalidad01.03.nombreHecho}}" />
+                          <h4>{{data.hechosLocalidad01.03.nombreHecho}}</h4>
+                          <p class="p_evento">{{data.hechosLocalidad01.03.direccionHecho}}</p>
                         </div><!--datos-->
-                        <div id="menu_recursos">
-                        	<a href="videos.html" target="_self"><img src="imagenes/boton_videos.svg" alt="Videos" /></a>
-                            <a href="audios.html" target="_self"><img src="imagenes/boton_audios.svg" alt="Audios" /></a>
-                            <a href="imagenes.html" target="_self"><img src="imagenes/boton_imagenes.svg" alt="Imágenes" /></a>
-                        </div><!--menu_recursos-->
+                          <div id="menu_recursos">
+                          	<!--a class="regresar_bot" href="mapa.html" target="_self">Volver a Hecho Memoria</a-->
+                          </div><!--menu_recursos-->
                     </div> <!--datos_hecho-->           	
-                	<div class="info_hecho">
-            			<h2>Cómo llegar</h2>
-                        <div id="map"></div>
-                        <button onclick="rutaCoche()">En Coche</button>
-                        <button onclick="rutaCaminando()">Caminando</button>
-                        <button onclick="rutaCicla()">En Bicicleta</button>
-                        <button onclick="rutaBus()">En Bus</button>
-                        <ul id="instructions"></ul>
-                	</div><!--info_hecho-->
-                    <div class="botones_regresar">
-                    	<a class="regresar" href="mapa.html" target="_self"><img src="imagenes/icono_mapa.svg" alt="Volver a Mapa" />Volver a Mapa</a>
-                        <a class="regresar" href="localidad01.html" target="_self"><img src="imagenes/icono_centro.svg" alt="Volver a Localidad" />Volver a Localidad</a>
-                    </div><!--botones regresar-->
-                </div><!--contenedor_hechos-->
-                <a class="flecha_adelante" href="#" target="_self"></a>
+                  <div class="info_hecho">
+              			<h2>Cómo llegar</h2>
+                          <div id="map"></div>
+                          <button class="medio_transporte" onClick="rutaCoche()">En Coche</button>
+                          <button class="medio_transporte" onClick="rutaCaminando()">Caminando</button>
+                          <button class="medio_transporte" onClick="rutaCicla()">En Bicicleta</button>
+                          <button class="medio_transporte" onClick="rutaBus()">En Bus</button>
+                          <ul id="instructions"></ul>
+                  </div><!--info_hecho-->
+                      <div class="botones_regresar">
+                      	<a class="regresar" href="mapa.html" target="_self"><img src="imagenes/icono_mapa.svg" alt="Volver a Mapa" />Volver a Mapa</a>
+                          <a class="regresar" href="localidad01.html" target="_self"><img src="imagenes/icono_centro.svg" alt="Volver a Localidad" />Volver a Localidad</a>
+                      </div><!--botones regresar-->
+                  </div><!--contenedor_hechos-->
             </article>
-            <div class="sociales"></div>
+            <div class="sociales">
+                <!-- COMPARTIR FACEBOOK -->
+                <div id="fb-root"></div>
+                <div class="fb-share-button" data-href="https://www.facebook.com/pages/Centro-de-Memoria-Paz-y-Reconciliaci%C3%B3n/458040637599016?fref=ts" data-layout="button_count"></div>
+                <!-- COMPARTIR FACEBOOK -->
+            	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-size="large" data-count="none">Twittear</a>
+            	<a href="https://plus.google.com/share?url={URL}" onClick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes');return false;"><img
+  src="https://www.gstatic.com/images/icons/gplus-64.png" alt="Share on Google+"/></a>
+            </div>
         </section>
         <footer>
         	<img id="dignificar" src="imagenes/Logo-AltaConsejeria.svg" alt="Alta Consejería" />
         	<img id="humana" src="imagenes/bogota_humana.svg" alt="Alcaldía de Bogotá, Bogotá Humana" />
         </footer>
     </div><!--contenedor-->
+    
+    <!-- COMPARTIR FACEBOOK -->
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=402700733163775";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>    
+    <!-- COMPARTIR FACEBOOK -->
+
+    <!-- ANGULAR scripts-->
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular_resource.js"></script>
+    <script type="text/javascript" src="js/hechos.js"></script>
+    <script type="text/javascript">
+
+    var test = angular.element(document.querySelector('[ng-controller="add"]')).scope().datos;
+    //var dom_el = document.querySelector('[ng-controller="appController"]');
+    //var ng_el = angular.element(dom_el);
+    //var ng_el_scope = ng_el.scope().datos[0];
+    //var street_name = ng_el_scope.datos[0];
+
+    // con JQUERY: var street_name = $('[ng-controller="appController"]').scope().datos;
+    console.log(test);
+    </script>
+    <!--fin angular scripts -->
 </body>
 </html>

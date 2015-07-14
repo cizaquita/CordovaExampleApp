@@ -4,8 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
 <title>Bogotá Ciudad Memoria, Centro de Memoria, Paz y Reconciliación</title>
-<link rel="shortcut icon" href="imagenes/favicon.ico" />
-<link rel="shortcut icon" href="img/favicon.ico"/>
 <link href="css/estilos.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="css/normalize.css" />
 <link rel="stylesheet" href="fuentes/opensans_bold_macroman/stylesheet.css" />
@@ -16,6 +14,20 @@
 <script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/prefixfree.js"></script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><!--código para el botón share de twitter-->
+
+    <!-- CODIGO PARA PASAR A OTRO HECHO O DEVOLVERSE -->
+    <script type="text/javascript">
+        var hechoActualEx;
+        function pasarHecho(hecho, hechoActual)
+        {
+            alert("pasarHecho: " + hecho + ", hechoActual: " + hechoActual);            
+            hechoActualEx = hechoActual;
+        }
+        function getHechoActualEx()
+        {
+            return hechoActualEx;
+        }
+    </script>
 </head>
 
 <body>
@@ -31,30 +43,48 @@
                     <li id="sitio"><a href="buscar.html" target="_self">Buscar Sitio de Memoria</a></li>
                     <li id="cerca"><a href="cerca.html" target="_self">Estoy Cerca de...</a></li>
                 </ul>
-   	 	  </nav>
+  </nav>
         	<img id="memoria" src="imagenes/titulo_app_mobil.svg" alt="Bogotá ciudad memoria" />
         	<img id="logo" src="imagenes/logo.svg" alt="Centro de Memoria, paz y reconciliación" />
         </header>
-        <section>
+        <section ng-controller="appController">
         	<div id="titulo_seccion">
             	<img class="seccion_icono" src="imagenes/icono_seccion.svg" alt="Sobre Bogotá Ciudad Memoria" />
                 <h1>Mapa Histórico</h1>            	
             </div>
-            <article ng-controller="appController">
-            	<div class="contenido1">
-                	<img src="imagenes/mapa_bogota.svg" alt="Bogotá" />
-                </div>            	
-                <div class="contenido2"><br>
-            		<ul id="localidades_menu" ng-repeat="data in datos">
-                         <li><a href="{{data.link}}" target="_self"><strong>{{data.idLocalidad}}.</strong> {{data.nombreLocalidad}}</a></li>
-                    </ul>
-                </div>
+            <article ng-repeat="data in datos">
+                <!-- FORM NECESARIO PARA PASAR AL OTRO HECHO -->
+                <form action="hecho.html" method="POST">
+                	<h3>{{data.hechosLocalidad01.03.nombreLocalidad}}</h3>
+                    <a onClick="$(this).closest('form').submit()" class="flecha_atras" href="#" target="_self"></a>                    
+                    <div class="contenedor_hechos">
+                		<div class="datos_hecho">                		
+                        	<div class="datos">
+                            	<img class="imagen_hecho" src="{{data.hechosLocalidad01.03.rutaImagen}}" alt="{{data.hechosLocalidad01.03.nombreHecho}}" />
+                        		<h4>{{data.hechosLocalidad01.03.nombreHecho}}</h4>
+                        		<p class="p_evento">{{data.hechosLocalidad01.03.direccionHecho}}</p>                        
+                            	<a id="como_llegar" href="{{data.hechosLocalidad01.03.linkComoLlegar}}" target="_self"><img src="imagenes/icono_comollegar.svg" alt="Cómo llegar" />Cómo llegar</a>
+                            </div><!--datos-->
+                            <div id="menu_recursos">
+                            	<a style="display:{{data.hechosLocalidad01.03.botonVideos}}" href="videos.html" target="_self"><img src="imagenes/boton_videos.svg" alt="Videos" /></a>
+                                <a style="display:{{data.hechosLocalidad01.03.botonAudios}}" href="audios.html" target="_self"><img src="imagenes/boton_audios.svg" alt="Audios" /></a>
+                                <a style="display:{{data.hechosLocalidad01.03.botonImagenes}}" href="imagenes.html" target="_self"><img src="imagenes/boton_imagenes.svg" alt="Imágenes" /></a>
+                                <a style="display:{{data.hechosLocalidad01.03.botonTomarfoto}}" href="#" target="_self"><img src="imagenes/boton_tomarfoto.svg" alt="Imágenes" /></a>
+                            </div><!--menu_recursos-->
+                        </div> <!--datos_hecho-->           	
+                    	<div class="info_hecho">
+                			<h2>{{data.hechosLocalidad01.03.tituloTextoInfo}}</h2>
+                			<p>{{data.hechosLocalidad01.03.descripcionTextoInfo}}</p>
+                    	</div><!--info_hecho-->
+                        <div class="botones_regresar">
+                        	<a class="regresar" href="mapa.html" target="_self"><img src="imagenes/icono_mapa.svg" alt="Volver a Mapa" />Volver a Mapa</a>
+                            <a class="regresar" href="localidad01.html" target="_self"><img src="imagenes/icono_centro.svg" alt="Volver a Localidad" />Volver a Localidad</a>
+                        </div><!--botones regresar-->
+                    </div><!--contenedor_hechos-->
+                    <a class="flecha_adelante" href="#" onClick="pasarHecho({{data.hechosLocalidad01.03.siguienteHecho}}, {{data.hechosLocalidad01.03.hechoActual}});" target="_self"></a>
+                </form> 
             </article>
             <div class="sociales">
-                <!-- COMPARTIR FACEBOOK -->
-                <div id="fb-root"></div>
-                <div class="fb-share-button" data-href="https://www.facebook.com/pages/Centro-de-Memoria-Paz-y-Reconciliaci%C3%B3n/458040637599016?fref=ts" data-layout="button_count"></div>
-                <!-- COMPARTIR FACEBOOK -->
             	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-size="large" data-count="none">Twittear</a>
             	<a href="https://plus.google.com/share?url={URL}" onClick="javascript:window.open(this.href,
   '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes');return false;"><img
@@ -66,22 +96,12 @@
         	<img id="humana" src="imagenes/bogota_humana.svg" alt="Alcaldía de Bogotá, Bogotá Humana" />
         </footer>
     </div><!--contenedor-->
-    
-    <!-- COMPARTIR FACEBOOK -->
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=402700733163775";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>    
-    <!-- COMPARTIR FACEBOOK -->
 
     <!-- ANGULAR scripts-->
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/angular_resource.js"></script>
-    <script type="text/javascript" src="js/listaLocalidades.js"></script>
+    <script type="text/javascript" src="js/hechos.js"></script>
     <!--fin angular scripts -->
+
 </body>
 </html>

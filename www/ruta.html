@@ -1,9 +1,9 @@
 <!doctype html>
+<html lang="es" ng-app="app" ng-controller="appController">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
 <title>Bogotá Ciudad Memoria, Centro de Memoria, Paz y Reconciliación</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="imagenes/favicon.ico" />
 <link rel="shortcut icon" href="img/favicon.ico"/>
 <link href="css/estilos.css" rel="stylesheet" type="text/css" />
@@ -15,6 +15,7 @@
 <script src="js/comandos.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/prefixfree.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><!--código para el botón share de twitter-->
 
 <!-- SCRIPTS MAPA -->
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -34,7 +35,7 @@
         map.addMarker({
            lat: 4.616912,
            lng: -74.068750,
-           icon: 'imagenes/miUbicacion32.png',
+           icon: 'imagenes/iconos/iconos_ubicacion02.svg',
            title: 'Inicio',
            infoWindow: {
              content: '<b>Punto 1</b><br>Inicio de ruta'
@@ -48,7 +49,7 @@
         map.addMarker({
            lat: 4.614175,
            lng: -74.067012,
-           icon: 'imagenes/miUbicacion32.png',
+           icon: 'imagenes/iconos/iconos_ubicacion02.svg',
            title: 'Punto 2',
            infoWindow: {
              content: '<b>Punto 2</b><br>Recorrido 2'
@@ -62,7 +63,7 @@
         map.addMarker({
            lat: 4.619424,
            lng: -74.076184,
-           icon: 'imagenes/miUbicacion32.png',
+           icon: 'imagenes/iconos/iconos_ubicacion02.svg',
            title: 'Punto 3',
            infoWindow: {
              content: '<b>Punto 3</b><br>Recorrido 3'
@@ -76,7 +77,7 @@
         map.addMarker({
            lat: 4.624899,
            lng: -74.077278,
-           icon: 'imagenes/miUbicacion32.png',
+           icon: 'imagenes/iconos/iconos_ubicacion02.svg',
            title: 'Punto 4',
            infoWindow: {
              content: '<b>Punto 4</b><br>Final recorrido'
@@ -110,7 +111,7 @@
                 	<li id="sobre"><a href="index.html" target="_self">Sobre Bogotá Ciudad <wbr>Memoria</a></li>
                     <li id="centro"><a href="centro.html" target="_self">Centro de Memoria, Paz y <wbr>Reconciliación</a></li>
                     <li id="mapa"><a href="mapa.html" target="_self">Mapa Histórico</a></li>
-                    <li id="sobre"><a href="rutas.html" target="_self">Rutas Temáticas</a></li>
+                    <li id="rutas"><a href="rutas.html" target="_self">Rutas Temáticas</a></li>
                     <li id="sitio"><a href="buscar.html" target="_self">Buscar Sitio de Memoria</a></li>
                     <li id="cerca"><a href="cerca.html" target="_self">Estoy Cerca de...</a></li>
                 </ul>
@@ -119,32 +120,54 @@
         	<img id="logo" src="imagenes/logo.svg" alt="Centro de Memoria, paz y reconciliación" />
         </header>
         <section>
-        	<div id="titulo_seccion">
+            <div id="titulo_seccion">
             	<img class="seccion_icono" src="imagenes/icono_seccion.svg" alt="Sobre Bogotá Ciudad Memoria" />
-                <h1>Ruta Temática 1</h1>
+                <h1>Rutas Temáticas</h1>
             </div>
             <article>
             	<div class="contenido1">
-                    <h2>Mapa</h2>
+                    <h2>{{datos[0].rutas.01.nombreRuta}}</h2>
                     <div id="map"></div>
                 </div>            	
-                <div class="contenido2"><br>
-                    <h2>Punto 1</h2>
-                    <p>Punto de inicio de la ruta temática</p>
-                    <h2>Punto 2</h2>
-                    <p>Punto de recorrido de la ruta temática</p>
-                    <h2>Punto 3</h2>
-                    <p>Punto de recorrido de la ruta temática</p>
-                    <h2>Punto 4</h2>
-                    <p>Punto final de la ruta temática</p>
+                <div class="contenido2" ng-repeat="dataEx in datos[0].rutas.01.puntosRuta">
+                  <br>
+                    <h2>{{dataEx.nombrePunto}}</h2>
+                    <p>{{dataEx.descripcionPunto}}</p>
                 </div>
+                <a class="regresar_bot" href="rutas.html" target="_self"><img src="imagenes/icono_rutatem.svg" alt="Volver a rutas" />Rutas Temáticas</a>
             </article>
-            <div class="sociales"></div>
+            <div class="sociales">
+                <!-- COMPARTIR FACEBOOK -->
+                <div id="fb-root"></div>
+                <div class="fb-share-button" data-href="https://www.facebook.com/pages/Centro-de-Memoria-Paz-y-Reconciliaci%C3%B3n/458040637599016?fref=ts" data-layout="button_count"></div>
+                <!-- COMPARTIR FACEBOOK -->
+            	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-size="large" data-count="none">Twittear</a>
+            	<a href="https://plus.google.com/share?url={URL}" onClick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes');return false;"><img
+  src="https://www.gstatic.com/images/icons/gplus-64.png" alt="Share on Google+"/></a>
+            </div>
         </section>
         <footer>
         	<img id="dignificar" src="imagenes/Logo-AltaConsejeria.svg" alt="Alta Consejería" />
         	<img id="humana" src="imagenes/bogota_humana.svg" alt="Alcaldía de Bogotá, Bogotá Humana" />
         </footer>
     </div><!--contenedor-->
+    
+    <!-- COMPARTIR FACEBOOK -->
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=402700733163775";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>    
+    <!-- COMPARTIR FACEBOOK -->
+
+    <!-- ANGULAR scripts-->
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular_resource.js"></script>
+    <script type="text/javascript" src="js/puntosRutas.js"></script>
+    <!--fin angular scripts -->
 </body>
 </html>

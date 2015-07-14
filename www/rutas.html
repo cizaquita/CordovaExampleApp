@@ -1,9 +1,9 @@
 <!doctype html>
+<html lang="es" ng-app="app">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
 <title>Bogotá Ciudad Memoria, Centro de Memoria, Paz y Reconciliación</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="imagenes/favicon.ico" />
 <link rel="shortcut icon" href="img/favicon.ico"/>
 <link href="css/estilos.css" rel="stylesheet" type="text/css" />
@@ -15,6 +15,7 @@
 <script src="js/comandos.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/prefixfree.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><!--código para el botón share de twitter-->
 </head>
 
 <body>
@@ -26,47 +27,58 @@
                 	<li id="sobre"><a href="index.html" target="_self">Sobre Bogotá Ciudad <wbr>Memoria</a></li>
                     <li id="centro"><a href="centro.html" target="_self">Centro de Memoria, Paz y <wbr>Reconciliación</a></li>
                     <li id="mapa"><a href="mapa.html" target="_self">Mapa Histórico</a></li>
-                    <li id="sobre"><a href="rutas.html" target="_self">Rutas Temáticas</a></li>
+                    <li id="rutas"><a href="rutas.html" target="_self">Rutas Temáticas</a></li>
                     <li id="sitio"><a href="buscar.html" target="_self">Buscar Sitio de Memoria</a></li>
                     <li id="cerca"><a href="cerca.html" target="_self">Estoy Cerca de...</a></li>
                 </ul>
-   	 	  </nav>
+ 	    </nav>
         	<img id="memoria" src="imagenes/titulo_app_mobil.svg" alt="Bogotá ciudad memoria" />
         	<img id="logo" src="imagenes/logo.svg" alt="Centro de Memoria, paz y reconciliación" />
         </header>
-        <section>
+        <section ng-controller="appController">
         	<div id="titulo_seccion">
             	<img class="seccion_icono" src="imagenes/icono_seccion.svg" alt="Sobre Bogotá Ciudad Memoria" />
                 <h1>Rutas Temáticas</h1>            	
             </div>
             <article>
-            	<div class="contenido1">
-                	<h2>Ruta Temática 1</h2>
-                	<p>Curabitur vel arcu felis. Pellentesque iaculis dapibus orci vitae condimentum. Aliquam nec ipsum sed felis accumsan sagittis vel eu augue. Pellentesque in pretium leo, a vulputate urna. Praesent dapibus luctus dui ultricies malesuada. Duis bibendum risus ac lacus semper, sit amet semper lectus blandit. Vestibulum sit amet nisi at sapien pretium volutpat et eget lacus. Fusce finibus iaculis augue, at aliquet elit porttitor eu. Maecenas elit felis, ullamcorper suscipit sem nec, lacinia congue lorem.
-                    <br><a class="regresar" href="ruta01.html" target="_self"><img src="imagenes/icono_mapa.svg" alt="Ir a Ruta" />Ir a Ruta</a></p>
-                    <br><br><br>
-                    <h2>Ruta Temática 2</h2>
-                	<p>Curabitur vel arcu felis. Pellentesque iaculis dapibus orci vitae condimentum. Aliquam nec ipsum sed felis accumsan sagittis vel eu augue. Pellentesque in pretium leo, a vulputate urna. Praesent dapibus luctus dui ultricies malesuada. Duis bibendum risus ac lacus semper, sit amet semper lectus blandit. Vestibulum sit amet nisi at sapien pretium volutpat et eget lacus. Fusce finibus iaculis augue, at aliquet elit porttitor eu. Maecenas elit felis, ullamcorper suscipit sem nec, lacinia congue lorem.
-                    <br><a class="regresar" href="ruta01.html" target="_self"><img src="imagenes/icono_mapa.svg" alt="Ir a Ruta" />Ir a Ruta</a></p>
-                    <br><br><br>
-                </div>            	
-                <div class="contenido2"><br>
-            		<h2>Ruta Temática 3</h2>
-            		<p>Curabitur vel arcu felis. Pellentesque iaculis dapibus orci vitae condimentum. Aliquam nec ipsum sed felis accumsan sagittis vel eu augue. Pellentesque in pretium leo, a vulputate urna. Praesent dapibus luctus dui ultricies malesuada. Duis bibendum risus ac lacus semper, sit amet semper lectus blandit. Vestibulum sit amet nisi at sapien pretium volutpat et eget lacus. Fusce finibus iaculis augue, at aliquet elit porttitor eu. Maecenas elit felis, ullamcorper suscipit sem nec, lacinia congue lorem.
-                    <br><a class="regresar" href="ruta01.html" target="_self"><img src="imagenes/icono_mapa.svg" alt="Ir a Ruta" />Ir a Ruta</a></p>
-                    <br><br><br>
-                    <h2>Ruta Temática 4</h2>
-            		<p>Curabitur vel arcu felis. Pellentesque iaculis dapibus orci vitae condimentum. Aliquam nec ipsum sed felis accumsan sagittis vel eu augue. Pellentesque in pretium leo, a vulputate urna. Praesent dapibus luctus dui ultricies malesuada. Duis bibendum risus ac lacus semper, sit amet semper lectus blandit. Vestibulum sit amet nisi at sapien pretium volutpat et eget lacus. Fusce finibus iaculis augue, at aliquet elit porttitor eu. Maecenas elit felis, ullamcorper suscipit sem nec, lacinia congue lorem.
-                    <br><a class="regresar" href="ruta01.html" target="_self"><img src="imagenes/icono_mapa.svg" alt="Ir a Ruta" />Ir a Ruta</a></p>
-                    <br><br><br>
-                </div>
+            	<div ng-repeat="data in datos" class="ruta_tematica">
+                    <h2>{{data.nombreRuta}}</h2>
+                    	<p>{{data.descripcionRuta}}
+                        <br>
+                        <a class="regresar" href="{{data.linkMapa}}" target="_self"><img src="imagenes/icono_mapa.svg" alt="Ir a Ruta" />Ir a Ruta</a></p>
+                </div><!--ruta tematica end-->
             </article>
-            <div class="sociales"></div>
+            <div class="sociales">
+                <!-- COMPARTIR FACEBOOK -->
+                <div id="fb-root"></div>
+                <div class="fb-share-button" data-href="https://www.facebook.com/pages/Centro-de-Memoria-Paz-y-Reconciliaci%C3%B3n/458040637599016?fref=ts" data-layout="button_count"></div>
+                <!-- COMPARTIR FACEBOOK -->
+            	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-size="large" data-count="none">Twittear</a>
+            	<a href="https://plus.google.com/share?url={URL}" onClick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes');return false;"><img
+  src="https://www.gstatic.com/images/icons/gplus-64.png" alt="Share on Google+"/></a>
+            </div>
         </section>
         <footer>
         	<img id="dignificar" src="imagenes/Logo-AltaConsejeria.svg" alt="Alta Consejería" />
         	<img id="humana" src="imagenes/bogota_humana.svg" alt="Alcaldía de Bogotá, Bogotá Humana" />
         </footer>
-    </div><!--contenedor-->
+    </div><!--contenedor-->    
+    <!-- COMPARTIR FACEBOOK -->
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=402700733163775";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>    
+    <!-- COMPARTIR FACEBOOK -->
+
+    <!-- ANGULAR scripts-->
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular_resource.js"></script>
+    <script type="text/javascript" src="js/rutasTematicas.js"></script>
+    <!--fin angular scripts -->
 </body>
 </html>

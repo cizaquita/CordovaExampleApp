@@ -1,0 +1,61 @@
+[
+    {
+        "rutas":
+        {
+        "01":
+            {
+                "idRuta":"01",
+                "nombreRuta":"Ruta1",
+                "puntosRuta":
+                [
+                    {
+                        "nombrePunto":"Punto1",
+                        "descripcionPunto":"Punto inicial",
+                        "latitud":"",
+                        "longitud":""
+                    },
+                    {
+                        "nombrePunto":"Punto2",
+                        "descripcionPunto":"Punto 2",
+                        "latitud":"",
+                        "longitud":""
+                    },
+                    {
+                        "nombrePunto":"Punto2",
+                        "descripcionPunto":"Punto 2",
+                        "latitud":"",
+                        "longitud":""
+                    },
+                    {
+                        "nombrePunto":"Punto2",
+                        "descripcionPunto":"Punto 2",
+                        "latitud":"",
+                        "longitud":""
+                    }
+                ]
+
+            },
+        "02":
+            {
+                "idRuta":"01",
+                "nombreRuta":"Ruta1",
+                "puntosRuta":
+                [
+                    {
+                        "nombrePunto":"Punto1",
+                        "descripcionPunto":"Punto inicial",
+                        "latitud":"",
+                        "longitud":""
+                    },
+                    {
+                        "nombrePunto":"Punto2",
+                        "descripcionPunto":"Punto 2",
+                        "latitud":"",
+                        "longitud":""
+                    }
+                ]
+
+            }
+        }
+    }
+]

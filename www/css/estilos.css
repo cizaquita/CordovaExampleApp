@@ -3,37 +3,54 @@
 /*etiquetas*/
 html {
 	width:100%;
-	height:auto;
+	height:100%;
 }
-body { 
-	font-size: 14px; /*Esto equivaldria a un 1 em*/
+body {
+	font-size:14px; /*Esto equivaldria a un 1 em*/
 	background:#FFFFFF;
+	overflow:hidden;
+}
+header {
+	width:100%;
+	height:10%;
+	top:0;
+	background-image:url(../imagenes/mapa_fondo.svg);
+	background-repeat:no-repeat;
+	background-size:70%;
+	margin:0 auto;
+	display:inline-block;
+	z-index:10;
+	float:left;
+	position:absolute;
+}
+header img {
+	max-height:2.5em;
 }
 nav {
 	width:auto;
-	height:100%;
+	height:auto;
 	float:left;
-	margin:4.5em 0 0 -4.8em;
-	z-index:2;
+	margin:0;
 	background-color:(0, 0, 0, 0.6);
+	z-index:10;
 }
 nav ul {
 	width:78%;
 	float:left;
 	list-style:none;
-	margin:0 0 0 -2.5em;
+	margin:3em 0 0 -3.5em;
 	background-color:#2e2e2e;
 	position:absolute;
 	overflow:hidden;
 	display:none;
 }
 nav ul li {
-	width:100%;
+	width:110%;
 	height:auto;
 	float:left;
 	list-style:none;
 	background-color:#363636;
-	margin:0 0 0.2em 0;
+	margin:0 0 0.2em -2.5em;
 	word-wrap:breakword;
 }
 nav a {
@@ -48,31 +65,21 @@ nav a {
 	padding:1em 0 0 4em;
 	word-wrap:breakword;
 }
-
-header {
-	width:100%;
-	height:6em;
-	background-image:url(../imagenes/mapa_fondo.svg);
-	background-repeat:no-repeat;
-	overflow:hidden;
-	margin:0 auto;
-	display:inline-block;
-	/*position:fixed;*/
-}
-header img {
-	max-height:60%;
-}
 section {
-	width:98%;
-	height:auto;
+	width:100%;
+	height:80%;
+	top:10%;
+	bottom:5%;
 	font-family: 'open_sansregular';
 	border-radius:5px;
 	background-image:url(../imagenes/fondo_v.svg);
 	background-repeat:no-repeat;
 	background-position:bottom;
-	background-size: 100%;
-	margin:0.5em auto;
-	overflow:hidden;
+	background-size:100%;
+	margin:0 auto;
+	overflow:scroll;
+	float:left;
+	position:absolute;
 }
 article {
 	width:100%;
@@ -116,11 +123,14 @@ h4 {
 }
 footer {
 	width:100%;
-	height:4em;
-	margin:0 auto;
+	height:5%;
+	bottom:0;
+	margin:0.5em auto;
+	float:left;
+	position:absolute;
 }
 footer img {
-	max-height:95%;
+	max-height:1.5em;
 }
 article img {
 	max-width:100%;
@@ -143,8 +153,8 @@ article img {
 	color:#606060;	
 }
 #menu_recursos a{/*ajusta los botones de audio, video e imagenes*/
-	width:4.5em;
-	height:4.5em;
+	width:auto;
+	height:3.5em;
 	float:left;
 	margin:0 0 0 10%;
 }
@@ -163,16 +173,18 @@ article img {
 	height:auto;
 }
 #menuicono {
+	height:2.5em;
 	float:left;
-	max-height:50%;
 	margin:0.5em;
 	display:block;
 }
 #logo {
+	width:15%;
 	float:right;
 	margin:1em 0 0 0;
 }
 #memoria {
+	width:25%;
 	float:left;
 	font-family: 'open_sansbold';
 	margin:1em 0 0 0;
@@ -201,13 +213,15 @@ article img {
 	margin:0 auto;
 }
 #humana {
+	width:15%;
 	float:right;
 }
 #dignificar {
+	width:15%;
 	float:left;
 }
 #sobre {/*imagen del icono del boton del menu principal*/
-	background-image:url(../imagenes/icono_cerca.svg);
+	background-image:url(../imagenes/icono_sobre.svg);
 	background-repeat:no-repeat;
 	background-size:3.5em;
 }
@@ -223,6 +237,11 @@ article img {
 }
 #centro {/*imagen del icono del boton del menu principal*/
 	background-image:url(../imagenes/icono_centro.svg);
+	background-repeat:no-repeat;
+	background-size:3.5em;
+}
+#rutas {/*imagen del icono del boton del menu principal*/
+	background-image:url(../imagenes/icono_rutatem.svg);
 	background-repeat:no-repeat;
 	background-size:3.5em;
 }
@@ -249,6 +268,11 @@ article img {
 #como_llegar img{/*icono del boton*/
 	max-height:150%;
 	float:left;
+}
+#fb-root{
+	float:left;
+	width:auto;
+	height:100%;
 }
 /*clases*/
 .contenedor_hechos{/*Para cuando se vean los hechos de memoria*/
@@ -284,6 +308,11 @@ article img {
 .contenido2 {
 	width:100%;
 	float:left;
+}
+.ruta_tematica {
+	width:100%;
+	float:left;
+	margin:0 0 1em 0;
 }
 .flecha_atras {
 	width:4%;
@@ -386,6 +415,24 @@ article img {
 	padding:1em;
 	margin:1em 0 0 30%;
 }
+.regresar_bot {/*boton para regresar a rutas tematicas*/
+	font-family: 'open_sansbold';
+	font-size:0.8em;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-align:right;
+	width:10em;
+	height:2em;
+	float:left;
+	background-color:#167dc6;
+	border-radius:5px;
+	padding:1em;
+	margin:1.5em 0 0 40%;
+}
+.regresar_bot img{/*icono del boton*/
+	max-height:150%;
+	float:left;
+}
 .regresar img{/*icono del boton*/
 	max-height:150%;
 	float:left;
@@ -418,6 +465,33 @@ article img {
 	text-align:center;
 	float:left;
 }
+.fb-share-button{
+	float:left;
+	width:auto;
+	height:2.5em;
+	margin-left:15%;
+}
+.sociales {
+	width:100%;
+	height:3em;
+	margin:1.5em 0;
+	float:left;
+}
+.sociales a {
+	width:auto;
+	height:2.5em;
+	float:left;
+	margin:0 1em 0 1em;
+}
+.sociales a img {
+	max-height:1.4em;
+}
+.medio_transporte {/*botones de auto, bicicleta, bus*/
+	background-color:#999;
+	border:none;
+	border-radius:5px;
+	font-family: 'open_sansregular';
+}
 /*pseudoclases*/
 nav a:active {
 	color:#363636;	
@@ -426,7 +500,7 @@ nav li:active {
 	background-color:#be6711;
 }
 #sobre:active {/*cambia el icono al hacer clic en el menu principal*/
-	background-image:url(../imagenes/icono_cerca_active.svg);
+	background-image:url(../imagenes/icono_sobre_active.svg);
 }
 #cerca:active {/*cambia el icono al hacer clic en el menu principal*/
 	background-image:url(../imagenes/icono_cerca_active.svg);
@@ -437,8 +511,11 @@ nav li:active {
 #mapa:active {/*cambia el icono al hacer clic en el menu principal*/
 	background-image:url(../imagenes/icono_mapa_active.svg);
 }
-#sitio {/*cambia el icono al hacer clic en el menu principal*/
+#sitio:active {/*cambia el icono al hacer clic en el menu principal*/
 	background-image:url(../imagenes/icono_buscarsitio_active.svg);
+}
+#rutas:active {/*cambia el icono al hacer clic en el menu principal*/
+	background-image:url(../imagenes/icono_rutatem_active.svg);
 }
 .flecha_atras:active {
 	background-image:url(../imagenes/flecha_botonIzq_active.svg);
@@ -454,17 +531,19 @@ nav li:active {
 
 @media only screen and (min-width: 481px) {
 /*etiquetas*/
-/* PUTA LINEA! para que ocultar un fking input!!!
 input {
 	display:none;
 }
-*/
-
+header {
+	background-size:50%;
+}
 section {
+	height:75%;
+	margin:1em auto;
 	background-image:url(../imagenes/fondo_seccion.svg);
 	background-repeat:no-repeat;
 	background-size:100%;
-	}
+}
 
 /*ids*/
 #menu_pestanas {/*organiza los botones de audio, video e imagenes en cada hecho*/
@@ -517,12 +596,15 @@ section {
 .datos_recursos {/*organiza la imagen y nombre del evento historico en seccion videos, audios e imagenes*/
 	width:50%;
 }
+.ruta_tematica {
+	width:45%;
+}
+.fb-share-button{
+	margin-left:35%;
+}
 /*pseudoclases*/
 
 }
-
-
-
 
 
 
@@ -530,67 +612,11 @@ section {
 
 @media only screen and (min-width: 769px) {
 /*etiquetas*/
-nav {
-	width:100%;
-	height:2em;
-	float:left;
-	margin:6em 0 0 0;
+header {
+	background-size:30%;
 }
-nav ul {
-	width:95%;
-	float:left;
-	margin:0;
-	background-color:#FFFFFF;
-	display:inline-block;
-}
-nav ul li {
-	width:12.5%;
-	height:4em;
-	margin:0 0.7em 0 0;
-	border-radius:5px;
-	background-color:#FFFFFF;
-}
-nav a {
-	width:100%;
-	height:2em;
-	font-size:0.9em;
-	color:#e8511e;
-	margin:0.5em;
-	padding:0;
-}
-section {/*cambia la imagen para el fondo de este tamaño*/
-	background-image:url(../imagenes/fondo_seccion.svg);
-	background-repeat:no-repeat;	
-	background-size:100%;
-	margin:4.3em auto;
-
-}
-
 /*ids*/
-#menuicono {/*icono del menu*/
-	display:none;
-}
-#logo {/*imagen del logo centro de memoria*/
-	margin:-8em 0 0 0;
-}
-#memoria {/*imagen titulo Bogota ciudad Memoria*/
-	margin:-8em 0 0 0;
-}
-#sobre {/*remueve el icono de este boton*/
-	background-image:none;
-}
-#mapa {/*remueve el icono de este boton*/
-	background-image:none;
-}
-#centro {/*remueve el icono de este boton*/
-	background-image:none;
-}
-#cerca {/*remueve el icono de este boton*/
-	background-image:none;
-}
-#sitio {/*remueve el icono de este boton*/
-	background-image:none;
-}
+
 /*clases*/
 .flecha_atras {
 	background-size:50%;
@@ -619,6 +645,11 @@ nav a:active {
 #cerca:active {
 	background-image:none;
 }
-
+#rutas:active {
+	background-image:none;
+}
+#sitio:active {
+	background-image:none;
+}
 }
 
